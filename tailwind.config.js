@@ -18,13 +18,13 @@ export default {
           950: "#3f121a",
         },
       },
-      container:{
-        center:true,
-        padding:{
-          DEFAULT:"1rem",
-          sm:"3rem",
-        }
-      }
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "3rem",
+        },
+      },
     },
   },
   plugins: [],
