@@ -93,10 +93,10 @@ const Testimonials = () => {
         <div data-aos="zoom-in">
           <Slider {...settings}>
             {TestiominalData.map((data) => (
-              <div className="my-6">
+              <div className="my-6"  key={data.id}>
                 <div
-                  key={data.id}
-                  className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl bg-solid-pink-200 relative "
+                 
+                  className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl bg-solid-pink-200 relative items-center"
                 >
                   <div className="mb-4">
                     <FaRegUser className=" rounded-md w-20 h-20" />

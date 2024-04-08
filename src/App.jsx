@@ -7,6 +7,7 @@ import Subscribe from "./components/Subscribe/Subscribe";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Testimonials from "./components/Testimonials/Testimonials";
+import Footer from "./components/Footer/Footer";
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
       <Banner></Banner>
       <Subscribe />
       <Testimonials/>
+      <Footer/>
     </div>
   );
 };
