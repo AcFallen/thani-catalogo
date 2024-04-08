@@ -69,7 +69,7 @@ const Navbar = () => {
               className=" bg-gradient-to-r from-solid-pink-600 to-solid-pink-900 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
             >
               <span className="group-hover:block hidden transition-all duration-200">
-                Order
+                Login
               </span>
               <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
             </button>
