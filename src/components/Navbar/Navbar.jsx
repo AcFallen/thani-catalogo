@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo_tani.svg";
 import { IoMdSearch } from "react-icons/io";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaUser } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import {Link} from 'react-router-dom';
 
@@ -65,15 +65,14 @@ const Navbar = () => {
               />
               <IoMdSearch className=" text-gray-500 group-hover:text-solid-pink-700 absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
-            <button
-              onClick={() => alert("la orden no esta disponible")}
+            <Link to="/login"
               className=" bg-gradient-to-r from-solid-pink-600 to-solid-pink-900 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
             >
               <span className="group-hover:block hidden transition-all duration-200">
-                Login
+                Ingresar
               </span>
-              <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-            </button>
+              <FaUser  className="text-xl text-white drop-shadow-sm cursor-pointer" />
+            </Link>
           </div>
         </div>
       </div>
