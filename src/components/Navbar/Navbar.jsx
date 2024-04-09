@@ -3,6 +3,7 @@ import Logo from "../../assets/logo_tani.svg";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
+import {Link} from 'react-router-dom';
 
 const Menu = [
   {
@@ -51,9 +52,9 @@ const Navbar = () => {
       <div className=" bg-solid-pink-100 py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#">
+            <Link to="/">
               <img src={Logo} alt="logo_thani" className="w-20" />
-            </a>
+            </Link>
           </div>
           <div className="flex justify-between items-center gap-4">
             <div className="relative group hidden sm:block">
@@ -76,7 +77,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center"> 
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>

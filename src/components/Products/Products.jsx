@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa6";
+import {Link} from 'react-router-dom';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -35,7 +36,7 @@ const Products = () => {
             {/* card section */}
             {products.map((data) => {
               return (
-                  <div key={data.id} className="space-y-3" data-aos="fade-up" data-aos-delay={data.aosDelay}>
+                  <div key={data.id} className="space-y-3 bg-white p-4 rounded-md shadow-md shadow-solid-pink-200" data-aos="fade-up" data-aos-delay={data.aosDelay}>
                     <img
                       src={data.thumbnail}
                       alt={data.title}
@@ -54,7 +55,7 @@ const Products = () => {
             })}
           </div>
           <div className="flex justify-center">
-            <button className="text-center mt-10 cursor-pointer bg-solid-pink-500 text-white py-1 p-2 rounded-md">Mirar todo los productos</button>
+            <Link to="/catalog" className="text-center mt-10 cursor-pointer bg-solid-pink-500 text-white py-1 p-2 rounded-md">Mirar todo los productos</Link>
           </div>
         </div>
       </div>
