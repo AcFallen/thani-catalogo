@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../assets/logo_tani.svg";
 
 const Login = () => {
   return (
@@ -9,7 +10,7 @@ const Login = () => {
           <div className="drop-shadow-lg">
             <img
               className="max-w-full h-auto md:max-w-60"
-              src="src\assets\logo_tani.svg"
+              src={Logo}
               alt="logo_thani"
             />
           </div>
