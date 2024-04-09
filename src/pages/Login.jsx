@@ -5,16 +5,15 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-svh bg-solid-pink-200 px-4">
       <div className=" bg-slate-50 border-2 border-solid-pink-500 rounded-2xl p-8 sm:max-w-sm md:max-w-md md:max-h-max shadow-lg">
-        <div className="drop-shadow-lg">
-            <Link to="/">
+        <Link to="/">
+          <div className="drop-shadow-lg">
             <img
-            className="max-w-full h-auto md:max-w-60"
-            src="src\assets\logo_tani.svg"
-            alt="logo_thani"
-          />
-            </Link>
-
-        </div>
+              className="max-w-full h-auto md:max-w-60"
+              src="src\assets\logo_tani.svg"
+              alt="logo_thani"
+            />
+          </div>
+        </Link>
         <div className="flex flex-col gap-4">
           <h2 className="font-bold text-solid-pink-800">Usuario</h2>
           <input
