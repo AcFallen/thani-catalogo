@@ -1,71 +1,46 @@
-import { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
-import Logo from "../assets/logo_tani.svg";
-import { RiStore2Line } from "react-icons/ri";
-import { RiServerLine } from "react-icons/ri";
-import { RiLogoutBoxLine, RiMenu3Fill, RiCloseLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  const [siderbar, setSidebar] = useState(false);
+  const { removeUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
-  const handleSidebar = () => {
-    setSidebar(!siderbar);
-  }
+  const [products, setProducts] = useState([]);
+
+  // Obtener los productos desde el servidor o local storage
+  useEffect(() => {
+    // Aquí puedes hacer una llamada a la API o cargar los productos desde el local storage
+    // y luego actualizar el estado con setProducts
+  }, []);
+
+  // Función para eliminar un producto
+  const deleteProduct = (productId) => {
+    // Aquí puedes implementar la lógica para eliminar el producto del servidor o del local storage
+    // y luego actualizar el estado con setProducts
+  };
+
+  // Función para cerrar sesión
+  const handleLogout = () => {
+    // Aquí puedes implementar la lógica para eliminar el usuario del local storage o del contexto de usuario
+    // y luego redirigir al usuario a la página de inicio de sesión con history.push('/login')
+
+    removeUser();
+    navigate("/login");
+  };
 
   return (
-    <div className="min-h-screen grid grid-cols-1 lg:grid-cols-6">
-      {/* siderbar */}
-      <div
-        className={`fixed lg:static w-[80%] md:w-[40%] lg:w-full top-0 z-50 bg-white transition-all ${
-          siderbar ? "-left-0" : "-left-full"
-        }   w-full h-screen overflow-y-hidden col-span-1 p-8 border shadow-md shadow-solid-pink-500`}
+    <div>
+
+      
+
+      <button
+        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mt-4"
+        onClick={handleLogout}
       >
-        {/* Logotipo */}
-        <div className="text-center p-8">
-          <h1 className="uppercase font-bold tracking[4px]">thani dashboard</h1>
-        </div>
-
-        <div className=" flex flex-col justify-between h-[500px]">
-          {/* Menú */}
-          <nav>
-            <ul>
-              <li>
-                <Link className="flex items-center gap-4 hover:bg-solid-pink-600 p-4 text-gray-400 hover:text-white rounded-lg transition-colors font-semibold">
-                  <RiStore2Line />
-                  Productos
-                </Link>
-              </li>
-              <li>
-                <Link className="flex items-center gap-4 hover:bg-solid-pink-600 p-4 text-gray-400 hover:text-white rounded-lg transition-colors font-semibold">
-                  <RiServerLine />
-                  Inventario
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          {/* comentario img logout */}
-          <div className="flex flex-col gap-4">
-            <img src="avatar.svg" alt="avatar" />
-            <Link className="flex items-center gap-4 hover:bg-solid-pink-600 p-4 text-gray-400 hover:text-white rounded-lg transition-colors font-semibold">
-              <RiLogoutBoxLine />
-              Salir
-            </Link>
-          </div>
-        </div>
-      </div>
-      {/* botoon meno movil */}
-      <button onClick={handleSidebar} className="block lg:hidden absolute bottom-4 right-4 bg-solid-pink-700 p-2 text-white rounded-full text-2xl">
-
-        {siderbar ? <RiCloseLine /> : <RiMenu3Fill />}
+        Cerrar sesión
       </button>
-      {/* contenido */}
-      <div className="col-span-5">
-        {/* header */}
-        <header>
-          Hola mundo
-        </header>
-      </div>
     </div>
   );
 };
